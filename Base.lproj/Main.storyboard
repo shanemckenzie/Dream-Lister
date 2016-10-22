@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="scC-a9-C8e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="scC-a9-C8e">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1zD-11-9uc"/>
                                     <constraint firstAttribute="width" constant="100" id="8n1-m9-7Kk"/>
@@ -161,6 +161,9 @@
                                     <constraint firstAttribute="width" constant="100" id="9yz-Zy-YJu"/>
                                     <constraint firstAttribute="height" constant="100" id="Flh-ip-hyJ"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="Vt0-tV-icx" eventType="touchUpInside" id="ni5-Ym-ytX"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="77t-Vu-LZn" customClass="CustomTextField" customModule="Dream_Lister" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.89494554920000002" green="0.81161838610000003" blue="0.86951433899999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,12 +249,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="k6g-XZ-iH1">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Wav-e5-taX">
                             <color key="tintColor" red="0.98823529409999999" green="0.2470588235" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="Vt0-tV-icx" id="otN-ak-1us"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="PriceField" destination="eMa-ys-QF8" id="UD7-MA-b10"/>
                         <outlet property="detailsField" destination="3W1-rV-AwS" id="jhI-dj-g8H"/>
                         <outlet property="storePicker" destination="MEI-ld-4kb" id="Dd6-z7-bG0"/>
+                        <outlet property="thumbImg" destination="scC-a9-C8e" id="8Kl-C0-j3n"/>
                         <outlet property="titleField" destination="77t-Vu-LZn" id="t85-bM-zTt"/>
                     </connections>
                 </viewController>
